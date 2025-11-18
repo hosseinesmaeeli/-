@@ -141,7 +141,7 @@ export const getAiAnalysis = async (reportId: number): Promise<string> => {
         }, 1500));
     }
 
-    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
     const { prompt, schema } = getPromptForReport(reportId);
 
     try {
